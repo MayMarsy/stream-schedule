@@ -1,3 +1,8 @@
+const tg = window.Telegram.WebApp;
+
+tg.ready();
+tg.expand();
+
 const schedule = [
     ["2026-07-11", "01:00"],
     ["2026-07-12", "01:00"],
