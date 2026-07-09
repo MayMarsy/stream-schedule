@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    background: #17212b;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 25px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #aaaaaa;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+#timezone {
+    background: #242f3d;
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.day {
+    background: #242f3d;
+    border-radius: 14px;
+    padding: 15px;
+    margin-bottom: 12px;
+}
+
+.date {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.time {
+    font-size: 18px;
+    color: #64b5ff;
+}
