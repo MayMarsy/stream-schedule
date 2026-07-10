@@ -162,6 +162,8 @@ h1 {
 .stream-card,
 .platform-card,
 .wishlist-button {
+  grid-column: 1 / -1;
+
   border: 1px solid var(--line);
   background:
     linear-gradient(135deg, rgba(255, 108, 183, .08), transparent 38%),
