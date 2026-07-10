@@ -1,8 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg"
-     viewBox="0 0 26.458333 7.9375"
+     viewBox="-3 -0.9 32.458333 9.7375"
      role="img"
      aria-labelledby="title">
   <title id="title">Chaturbate</title>
+
+  <g transform="translate(13.229 3.96875) scale(1.22) translate(-13.229 -3.96875)">
 
   <defs>
     <filter id="softGlow" x="-30%" y="-40%" width="160%" height="180%">
@@ -25,21 +27,22 @@
   </defs>
 
   <!-- Wide outer pink glow -->
-  <use transform="translate(-1.3 -0.35) scale(1.12)" href="#logoPaths"
+  <use href="#logoPaths"
        stroke="#ff3f9f"
        stroke-width="0.30"
        opacity="0.34"
        filter="url(#softGlow)"/>
 
   <!-- Main neon contour -->
-  <use transform="translate(-1.3 -0.35) scale(1.12)" href="#logoPaths"
+  <use href="#logoPaths"
        stroke="#ff5dae"
        stroke-width="0.15"
        opacity="0.98"/>
 
   <!-- Bright inner pink line -->
-  <use transform="translate(-1.3 -0.35) scale(1.12)" href="#logoPaths"
+  <use href="#logoPaths"
        stroke="#ff9dce"
        stroke-width="0.065"
        opacity="1"/>
+  </g>
 </svg>
