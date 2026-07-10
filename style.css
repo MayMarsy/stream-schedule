@@ -399,9 +399,9 @@ h1 {
 
 }
 .platform-logo {
-    width: 85%;
-    max-width: 150px;
-    height: 54px;
+    width: 96%;
+    max-width: 220px;
+    height: 78px;
     object-fit: contain;
 
     filter:
@@ -413,22 +413,6 @@ h1 {
         hue-rotate(292deg)
         brightness(103%)
         contrast(102%)
-        drop-shadow(0 0 10px rgba(255, 93, 174, 0.7));
-}
-.platform-logo {
-    width: 85%;
-    max-width: 150px;
-    height: 54px;
-    object-fit: contain;
-
-    filter:
-        brightness(0)
-        saturate(100%)
-        invert(67%)
-        sepia(46%)
-        saturate(3095%)
-        hue-rotate(292deg)
-        brightness(103%)
-        contrast(102%)
-        drop-shadow(0 0 10px rgba(255, 93, 174, 0.7));
+        drop-shadow(0 0 4px rgba(255, 93, 174, 0.7))
+        drop-shadow(0 0 10px rgba(255, 93, 174, 0.6));
 }
