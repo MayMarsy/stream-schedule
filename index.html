@@ -75,5 +75,13 @@
 
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <script src="app.js?v=15"></script>
+  <script>
+const APP_VERSION = "20260710-01";
+
+document.querySelectorAll("img.platform-logo").forEach(img => {
+    const src = img.getAttribute("src").split("?")[0];
+    img.src = `${src}?v=${APP_VERSION}`;
+});
+</script>
 </body>
 </html>
