@@ -4,6 +4,8 @@
      aria-labelledby="title">
   <title id="title">Chaturbate</title>
 
+  <g transform="translate(13.229 3.96875) scale(1.22) translate(-13.229 -3.96875)">
+
   <defs>
     <filter id="softGlow" x="-30%" y="-40%" width="160%" height="180%">
       <feGaussianBlur stdDeviation="0.12" result="blur"/>
@@ -42,4 +44,5 @@
        stroke="#ff9dce"
        stroke-width="0.065"
        opacity="1"/>
+  </g>
 </svg>
