@@ -7,13 +7,6 @@
   <g transform="translate(13.229 3.96875) scale(1.22) translate(-13.229 -3.96875)">
 
   <defs>
-    <filter id="softGlow" x="-30%" y="-40%" width="160%" height="180%">
-      <feGaussianBlur stdDeviation="0.005" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
 
     <g id="logoPaths"
        fill="none"
@@ -31,7 +24,7 @@
        stroke="#ff3f9f"
        stroke-width="0.30"
        opacity="0.34"
-       filter="url(#softGlow)"/>
+       
 
   <!-- Main neon contour -->
   <use href="#logoPaths"
