@@ -404,6 +404,6 @@ h1 {
     height: 78px;
     object-fit: contain;
 
-    filter:
-        drop-shadow(0 0 2px rgba(255, 93, 174, 0.18));
+  filter: 
+  none;
 }
