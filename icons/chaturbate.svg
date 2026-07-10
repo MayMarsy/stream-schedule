@@ -8,7 +8,7 @@
 
   <defs>
     <filter id="softGlow" x="-30%" y="-40%" width="160%" height="180%">
-      <feGaussianBlur stdDeviation="0.00" result="blur"/>
+      <feGaussianBlur stdDeviation="0.005" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
