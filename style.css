@@ -408,3 +408,38 @@ h1 {
 
   filter: none;
 }
+
+.platform-card,
+.wishlist-button {
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.platform-card:hover,
+.wishlist-button:hover {
+  transform: translateY(-2px);
+}
+
+.platform-card:active,
+.wishlist-button:active {
+  transform: scale(0.98);
+}
+
+.platform-logo {
+  transition: transform 0.2s ease;
+}
+
+.platform-card:hover .platform-logo {
+  transform: scale(1.03);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .platform-card,
+  .wishlist-button,
+  .platform-logo {
+    transition: none;
+  }
+}
