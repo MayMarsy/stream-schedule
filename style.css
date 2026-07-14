@@ -444,4 +444,29 @@ h1 {
   }
 }
 
+body.animations-ready .platform-card,
+body.animations-ready .wishlist-button {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
 
+body.animations-ready .platform-card.is-visible,
+body.animations-ready .wishlist-button.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body.animations-ready .platform-card.is-visible:hover,
+body.animations-ready .wishlist-button.is-visible:hover {
+  transform: translateY(-2px);
+}
+
+body.animations-ready .platform-card.is-visible:active,
+body.animations-ready .wishlist-button.is-visible:active {
+  transform: scale(0.98);
+}
