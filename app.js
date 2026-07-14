@@ -7,23 +7,18 @@ if (tg) {
   tg.setBackgroundColor("#070105");
 }
 
-const schedule = [
-  ["2026-07-11", "01:00"],
-  ["2026-07-12", "01:00"],
-  ["2026-07-13", "01:00"],
-  ["2026-07-15", "02:00"],
-  ["2026-07-16", "01:00"],
-  ["2026-07-17", "01:00"],
-  ["2026-07-18", "00:00"],
-  ["2026-07-19", "00:00"],
-  ["2026-07-20", "00:00"],
-  ["2026-07-23", "01:00"],
-  ["2026-07-24", "01:00"],
-  ["2026-07-25", "00:00"],
-  ["2026-07-26", "01:00"],
-  ["2026-07-27", "01:00"],
-  ["2026-07-28", "00:00"]
-];
+const config = window.STREAM_CONFIG;
+
+const schedule = config.schedule;
+const sourceOffset = config.sourceOffset || "+03:00";
+
+document.title = config.title;
+
+const titleElement = document.querySelector("h1");
+
+if (titleElement) {
+  titleElement.textContent = config.title;
+}
 
 const userTimezone =
   Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC";
@@ -34,7 +29,9 @@ document.getElementById("timezone").textContent =
 const scheduleContainer = document.getElementById("schedule");
 
 schedule.forEach(([date, time], index) => {
-  const moscowDateTime = new Date(`${date}T${time}:00+03:00`);
+  const moscowDateTime = new Date(
+  `${date}T${time}:00${sourceOffset}`
+);
 
   const dateText = new Intl.DateTimeFormat("en-US", {
     timeZone: userTimezone,
