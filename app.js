@@ -86,7 +86,7 @@ function renderSchedule() {
 
     const card = document.createElement("article");
     card.className = "stream-card";
-    card.style.animationDelay = `${visibleIndex * 70}ms`;
+    card.style.animationDelay = `${visibleIndex * 120}ms`;
 
     card.innerHTML = `
       <div class="stream-icon" aria-hidden="true">${icon}</div>
