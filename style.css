@@ -566,7 +566,7 @@ body.animations-ready .wishlist-button.is-visible:active {
   height: auto;
 
   left: 50%;
-  top: -145px;
+  top: -185px;
   transform: translateX(-50%);
 
   z-index: 3;
