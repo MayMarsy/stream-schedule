@@ -508,8 +508,9 @@ body.animations-ready .wishlist-button.is-visible:active {
 
 .join-mascot {
   position: absolute;
-  right: 18px;
-  top: -18px;
+  left: -10px;
+right: auto;
+  top: -15px;
   width: 54px;
   height: auto;
   z-index: 3;
