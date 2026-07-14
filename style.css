@@ -470,3 +470,27 @@ body.animations-ready .platform-card.is-visible:active,
 body.animations-ready .wishlist-button.is-visible:active {
   transform: scale(0.98);
 }
+
+@keyframes scheduleAppear {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stream-card {
+  opacity: 0;
+  animation: scheduleAppear 0.45s ease forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stream-card {
+    opacity: 1;
+    animation: none;
+  }
+}
