@@ -71,10 +71,10 @@
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
 <script>
-  const tg = window.Telegram?.WebApp;
+  const telegramApp = window.Telegram?.WebApp;
 
   const startParam =
-    tg?.initDataUnsafe?.start_param ||
+    telegramApp?.initDataUnsafe?.start_param ||
     new URLSearchParams(window.location.search).get("tgWebAppStartParam");
 
   if (startParam === "links") {
