@@ -506,17 +506,54 @@ body.animations-ready .wishlist-button.is-visible:active {
   z-index: 2;
 }
 
-/* LINKS PAGE */
+/* LINKS PAGE ONLY */
 
-.links-page .join-section {
-  padding-top: 55px;
+.links-page main {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 26px 14px;
 }
 
-.links-page .join-text {
-  font-size: 28px;
-  letter-spacing: 1.5px;
+.links-page .join-section {
+  width: min(100%, 430px);
+  margin: 0 auto;
+  padding-top: 0;
+}
+
+.links-page .links-top-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  opacity: 0.95;
 }
 
 .links-page .join-title {
-  margin-bottom: 22px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+
+.links-page .join-decor:first-child {
+  justify-self: start;
+}
+
+.links-page .join-decor:last-child {
+  justify-self: end;
+}
+
+.links-page .join-text {
+  text-align: center;
+  font-size: 31px;
+  letter-spacing: 2px;
+  line-height: 1.1;
+  white-space: nowrap;
 }
