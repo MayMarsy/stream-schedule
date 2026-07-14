@@ -28,38 +28,91 @@ document.getElementById("timezone").textContent =
 
 const scheduleContainer = document.getElementById("schedule");
 
-schedule.forEach(([date, time], index) => {
-  const moscowDateTime = new Date(
-  `${date}T${time}:00${sourceOffset}`
-);
+function getLocalDateKey(date, timeZone) {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  }).formatToParts(date);
 
-  const dateText = new Intl.DateTimeFormat("en-US", {
-    timeZone: userTimezone,
-    weekday: "short",
-    month: "short",
-    day: "numeric"
-  }).format(moscowDateTime);
+  const values = {};
 
-  const timeText = new Intl.DateTimeFormat("en-GB", {
-    timeZone: userTimezone,
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: false
-  }).format(moscowDateTime);
+  parts.forEach(part => {
+    if (part.type !== "literal") {
+      values[part.type] = part.value;
+    }
+  });
 
-  const icon = index % 2 === 0 ? "🔥" : "😈";
+  return `${values.year}-${values.month}-${values.day}`;
+}
 
-  const card = document.createElement("article");
-  card.className = "stream-card";
-  card.innerHTML = `
-    <div class="stream-icon" aria-hidden="true">${icon}</div>
-    <div class="stream-date">${dateText}</div>
-    <div class="stream-divider" aria-hidden="true">✦</div>
-    <div class="stream-clock">${timeText}</div>
-  `;
+function renderSchedule() {
+  scheduleContainer.replaceChildren();
 
-  scheduleContainer.appendChild(card);
-});
+  const todayKey = getLocalDateKey(new Date(), userTimezone);
+  let visibleIndex = 0;
+
+  schedule.forEach(([date, time]) => {
+    const streamDateTime = new Date(
+      `${date}T${time}:00${sourceOffset}`
+    );
+
+    const streamDateKey = getLocalDateKey(
+      streamDateTime,
+      userTimezone
+    );
+
+    // Полностью пропускаем карточки прошедших дат.
+    if (streamDateKey < todayKey) {
+      return;
+    }
+
+    const dateText = new Intl.DateTimeFormat("en-US", {
+      timeZone: userTimezone,
+      weekday: "short",
+      month: "short",
+      day: "numeric"
+    }).format(streamDateTime);
+
+    const timeText = new Intl.DateTimeFormat("en-GB", {
+      timeZone: userTimezone,
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false
+    }).format(streamDateTime);
+
+    const icon = visibleIndex % 2 === 0 ? "🔥" : "😈";
+
+    const card = document.createElement("article");
+    card.className = "stream-card";
+
+    card.innerHTML = `
+      <div class="stream-icon" aria-hidden="true">${icon}</div>
+      <div class="stream-date">${dateText}</div>
+      <div class="stream-divider" aria-hidden="true">✦</div>
+      <div class="stream-clock">${timeText}</div>
+    `;
+
+    scheduleContainer.appendChild(card);
+    visibleIndex += 1;
+  });
+}
+
+renderSchedule();
+
+// Если Mini App останется открытым после полуночи,
+// прошедшая дата исчезнет автоматически в течение минуты.
+let currentDateKey = getLocalDateKey(new Date(), userTimezone);
+
+setInterval(() => {
+  const newDateKey = getLocalDateKey(new Date(), userTimezone);
+
+  if (newDateKey !== currentDateKey) {
+    currentDateKey = newDateKey;
+    renderSchedule();
+  }
+}, 60000);
 
 function initRevealAnimations() {
   const items = document.querySelectorAll(
@@ -93,7 +146,10 @@ function initRevealAnimations() {
 }
 
 if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initRevealAnimations);
+  document.addEventListener(
+    "DOMContentLoaded",
+    initRevealAnimations
+  );
 } else {
   initRevealAnimations();
 }
