@@ -506,3 +506,17 @@ body.animations-ready .wishlist-button.is-visible:active {
   z-index: 2;
 }
 
+/* LINKS PAGE */
+
+.links-page .join-section {
+  padding-top: 55px;
+}
+
+.links-page .join-text {
+  font-size: 28px;
+  letter-spacing: 1.5px;
+}
+
+.links-page .join-title {
+  margin-bottom: 22px;
+}
