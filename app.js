@@ -63,3 +63,40 @@ schedule.forEach(([date, time], index) => {
 
   scheduleContainer.appendChild(card);
 });
+
+function initRevealAnimations() {
+  const items = document.querySelectorAll(
+    ".platform-card, .wishlist-button"
+  );
+
+  if (!items.length || !("IntersectionObserver" in window)) {
+    return;
+  }
+
+  document.body.classList.add("animations-ready");
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.15
+    }
+  );
+
+  items.forEach((item, index) => {
+    item.style.transitionDelay = `${index * 70}ms`;
+    observer.observe(item);
+  });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initRevealAnimations);
+} else {
+  initRevealAnimations();
+}
