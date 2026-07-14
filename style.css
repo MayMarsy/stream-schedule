@@ -517,6 +517,7 @@ body.animations-ready .wishlist-button.is-visible:active {
 }
 
 .links-page .join-section {
+  position: relative;
   width: min(100%, 430px);
   margin: 0 auto;
   padding-top: 0;
@@ -559,9 +560,15 @@ body.animations-ready .wishlist-button.is-visible:active {
 }
 
 .links-page .links-mascot {
-  display: block;
-  width: 92px;
-  max-width: 34vw;
+  position: absolute;
+  width: 150px;
+  max-width: 42vw;
   height: auto;
-  margin: 0 auto 14px;
+
+  left: 50%;
+  top: -165px;
+  transform: translateX(-50%);
+
+  z-index: 3;
+  pointer-events: none;
 }
