@@ -1,5 +1,5 @@
 window.STREAM_CONFIG = {
-  appVersion: "2026.07.14-01",
+  appVersion: "2026.07.14-02",
 
   title: "July Stream Schedule",
 
