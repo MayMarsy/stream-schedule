@@ -1,7 +1,7 @@
 window.STREAM_CONFIG = {
-  appVersion: "2026.07.14-02",
+  appVersion: "2026.07.14-03",
 
-  title: "July Stream Schedule",
+  title: "August Stream Schedule",
 
   sourceOffset: "+03:00",
 
