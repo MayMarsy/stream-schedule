@@ -11,31 +11,58 @@
 
   <meta name="theme-color" content="#0a0208" />
 
-  <title>May's Links</title>
+  <title>COLLABORATION TIME</title>
 
-  <link rel="stylesheet" href="style.css?v=28" />
+  <link rel="stylesheet" href="style.css?v=27" />
 </head>
 
 
-<body class="links-page">
+<body>
 
-  <main>
+  <div class="page-frame" aria-hidden="true"></div>
+
+
+  <main class="app-shell">
+
+    <!-- HEADER -->
+    <header class="hero">
+
+      <div class="winged-heart" aria-hidden="true">
+        <span class="wing">╲╱</span>
+        <span class="heart">♡</span>
+        <span class="wing wing-right">╲╱</span>
+      </div>
+
+      <h1>COLLABORATION TIME</h1>
+
+      <p>
+        All times are automatically converted<br>
+        to your local timezone
+      </p>
+
+    </header>
+
+
+    <!-- TIMEZONE -->
+    <section
+      class="timezone-card"
+      aria-live="polite"
+    >
+      <span class="timezone-icon">🌐</span>
+      <span id="timezone">Detecting your timezone…</span>
+    </section>
+
+
+    <!-- SCHEDULE -->
+    <section
+      id="schedule"
+      class="schedule-list"
+      aria-label="Stream schedule"
+    ></section>
 
 
     <!-- CLICK TO JOIN -->
     <section class="join-section">
-
-      <img
-        class="links-mascot"
-        src="icons/may-sticker.png?v=2"
-        alt="May mascot"
-      >
-
-      <div class="links-top-ornament" aria-hidden="true">
-        <span>✦ ✦ ✦</span>
-        <span>♡</span>
-        <span>✦ ✦ ✦</span>
-      </div>
 
       <div class="join-title">
 
@@ -165,6 +192,14 @@
 
   <!-- TELEGRAM MINI APP -->
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+
+  <!-- SCHEDULE DATA -->
+  <script src="config.js?v=20261118"></script>
+
+
+  <!-- APP -->
+  <script src="app.js?v=20261118"></script>
 
 
 </body>
